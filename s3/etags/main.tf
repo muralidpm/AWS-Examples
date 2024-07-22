@@ -8,10 +8,11 @@ terraform {
 }
 
 resource "aws_s3_bucket" "default" {
+  bucket = "my-bucket-with-tf"  // Replace with a unique bucket name
 }
 
 resource "aws_s3_object" "object" {
-  bucket = "resource.aws_s3_bucket.default"
+  bucket = aws_s3_bucket.default.bucket
   key    = "myfile.txt"
   source = "myfile.txt"
 }
