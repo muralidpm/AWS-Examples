@@ -11,3 +11,7 @@ aws s3api put-object --bucket metadata-kmd --key hello.txt --body hello.txt --me
 
 ## Get metadata object 
 aws s3api head-object --bucket metadata-kmd --key hello.txt
+
+## Clean-up
+aws s3 rm s3://metadata-kmd/hello.txt 
+aws s3 rb s3://metadata-kmd
