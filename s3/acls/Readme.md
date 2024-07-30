@@ -9,3 +9,6 @@ aws s3api put-public-access-block --bucket kmd-bucket-1 --public-access-block-co
 ## Change bucket ownership 
 
 aws s3api put-bucket-ownership-controls --bucket kmd-bucket-1 --ownership-controls="Rules=[{ObjectOwnership=BucketOwnerPreferred}]"
+
+## Remove bucket
+aws rb s3://kmd-bucket-1
